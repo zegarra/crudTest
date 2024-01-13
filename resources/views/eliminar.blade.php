@@ -28,7 +28,7 @@
             <hr>
             <form action="">
                 <button class="btn btn-secondary" onclick="goBack()">Atras</button>
-                <button class="btn btn-danger">Eliminar</button>
+                <button class="btn btn-danger"><span class="fas fa-user-times"></span>Eliminar</button>
             </form>
         </div>
     </p>

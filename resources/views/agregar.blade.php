@@ -4,12 +4,13 @@
 
 @section('contenido')
 <div class="card">
-  <div class="card-header">Agregar nuevo</div>
+  <h5 class="card-header">Agregar nuevo</h5>
   <div class="card-body">
-    <h5></h5>
     <p class="card-text">
-      <form action="#">
-        <!-- apellido paterno -->
+      <form action="{{route('personas.store')}}" method="POST">
+        <!-- enviar token -->
+      @csrf
+      <!-- apellido paterno -->
         <label for="">Apellido paterno</label>
         <input type="text" name="apellido_paterno" class="form-control" required>
         <!-- apellido materno 
@@ -18,12 +19,12 @@
         <input type="text" name="apellido_materno" class="form-control" required>
         <!-- nombres -->
         <label for="">Nombres</label>
-        <input type="text" name="nombres" class="form-control" required>
+        <input type="text" name="nombre" class="form-control" required>
         <!-- fecha de macimiento -->
         <label for="">Fecha de nacimiento</label>
         <input type="date" name="fecha_nacimiento" class="form-control" required>
         <br>
-        <button class="btn btn-primary">Agregar persona</button>
+        <button class="btn btn-primary">Agregar</button>
         <button class="btn btn-secondary" onclick="goBack()">Atras</button>
       </form>
     </p>

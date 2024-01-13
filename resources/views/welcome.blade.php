@@ -2,14 +2,20 @@
 @section('crudPagina','crud con Larevel')
 @section('contenido')
 <div class="card text-center">
-  <div class="card-header">
-    CRUD CON LARAVEL 8
-  </div>
+  <div class="card-header">CRUD CON LARAVEL 8</div>
   <div class="card-body">
+  <div class="row">
+      <div class="col-sm-12">
+        @if($mensaje= Session::get('success'))
+          <div class="alert alert-success" role="alert">
+            {{$mensaje}}
+          </div>
+          @endif
+        </div>
+    </div>
     <h5 class="card-title">Listado de personas en mi sistema</h5>
     <p>
         <a href="{{route('personas.create') }}" class="btn btn-primary"><spam class="fas fa-user-plus"></spam>Add new person</a>
-        <a href="{{route('personas.edit') }}" class="btn btn-primary">Edit person</a>
     </p>
     <hr>
     <!-- @php
@@ -35,7 +41,7 @@
                         <td>{{$item -> nombre}}</td>
                         <td>{{$item -> fecha_nacimiento}}</td>
                         <td>
-                          <form action="">
+                          <form action="{{ route("personas.edit", $item->id)}}" method="GET">
                              <button class="btn btn-warning btn-sm">
                               <span class="fas fa-user-edit"></span>
                             </button>
@@ -43,8 +49,8 @@
                         </td>
                         <td>
                           <form action="">
-                             <button class="btn btn-warning btn-sm">
-                              <span class="fas fa-user-edit"></span>
+                             <button class="btn btn-danger btn-sm">
+                              <span class="fas fa-user-times"></span>
                             </button>
                           </form>                         
                         </td>
