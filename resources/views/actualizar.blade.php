@@ -4,7 +4,7 @@
 
 @section('contenido')
 <div class="card">
-  <div class="card-header">Agregar nuevo</div>
+  <div class="card-header">Editar persona</div>
   <div class="card-body">
     <h5></h5>
     <p class="card-text">
@@ -23,14 +23,14 @@
         <label for="">Fecha de nacimiento</label>
         <input type="date" name="fecha_nacimiento" class="form-control" required>
         <br>
-        <button class="btn btn-primary">Agregar persona</button>
+        <button class="btn btn-primary">Actualizar</button>
         <button class="btn btn-secondary" onclick="goBack()">Atras</button>
       </form>
     </p>
     <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
   </div>
   <div class="card-footer text-body-secondary">
-    11/01/2024
+    12/01/2024
   </div>
 </div>
 

@@ -26,11 +26,12 @@ class PersonasController extends Controller
     public function show(Personas $personas)
     {
         //obtener
+        return view("eliminar");
     }
     public function edit(Personas $personas)
     {
         //
-        return "aqui se actualiza";
+        return view("actualizar");
     }
     public function update(Request $request, Personas $personas)
     {

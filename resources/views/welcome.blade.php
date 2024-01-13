@@ -8,7 +8,7 @@
   <div class="card-body">
     <h5 class="card-title">Listado de personas en mi sistema</h5>
     <p>
-        <a href="{{route('personas.create') }}" class="btn btn-primary">Add new person</a>
+        <a href="{{route('personas.create') }}" class="btn btn-primary"><spam class="fas fa-user-plus"></spam>Add new person</a>
         <a href="{{route('personas.edit') }}" class="btn btn-primary">Edit person</a>
     </p>
     <hr>
@@ -34,8 +34,20 @@
                         <td>{{$item -> apellido_materno}}</td>
                         <td>{{$item -> nombre}}</td>
                         <td>{{$item -> fecha_nacimiento}}</td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                          <form action="">
+                             <button class="btn btn-warning btn-sm">
+                              <span class="fas fa-user-edit"></span>
+                            </button>
+                          </form>                         
+                        </td>
+                        <td>
+                          <form action="">
+                             <button class="btn btn-warning btn-sm">
+                              <span class="fas fa-user-edit"></span>
+                            </button>
+                          </form>                         
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
