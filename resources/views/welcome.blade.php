@@ -42,13 +42,13 @@
                         <td>{{$item -> fecha_nacimiento}}</td>
                         <td>
                           <form action="{{ route("personas.edit", $item->id)}}" method="GET">
-                             <button class="btn btn-warning btn-sm">
+                            <button class="btn btn-warning btn-sm">
                               <span class="fas fa-user-edit"></span>
                             </button>
                           </form>                         
                         </td>
                         <td>
-                          <form action="">
+                          <form action="{{ route("personas.show", $item->id)}}" method="GET">
                              <button class="btn btn-danger btn-sm">
                               <span class="fas fa-user-times"></span>
                             </button>

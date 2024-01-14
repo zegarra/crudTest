@@ -18,17 +18,21 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $personas-> apellido_paterno}}</td>
+                        <td>{{ $personas-> apellido_materno}}</td>
+                        <td>{{ $personas-> nombre}}</td>
+                        <td>{{ $personas-> fecha_nacimiento}}</td>
                     </tr>
                 </tbody>
             </table>
             <hr>
-            <form action="">
-                <button class="btn btn-secondary" onclick="goBack()">Atras</button>
-                <button class="btn btn-danger"><span class="fas fa-user-times"></span>Eliminar</button>
+            <form action="{{route('personas.destroy', $personas->id)}}" method="POST" >
+              @csrf
+              @method('DELETE')             
+                <button class="btn btn-danger">
+                  <span class="fas fa-user-times"></span>Eliminar
+                </button>
+                <a href="{{route("personas.index")}}" class="btn btn-secondary">Atras</a>
             </form>
         </div>
     </p>

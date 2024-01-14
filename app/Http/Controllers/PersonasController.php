@@ -31,10 +31,11 @@ class PersonasController extends Controller
         $personas->save();
         return redirect()->route('personas.index')->with("success", "Agregado con exito¡");
     }
-    public function show(Personas $personas)
+    public function show($id)
     {
         //obtener
-        return view("eliminar");
+        $personas = Personas::find($id);
+        return view("eliminar", compact('personas'));
     }
     public function edit($id)
     {
@@ -53,8 +54,11 @@ class PersonasController extends Controller
         $personas->save();
         return redirect()->route('personas.index')->with("success", "Actualizado con exito¡");
     }
-    public function destroy(Personas $personas)
+    public function destroy($id)
     {
         //
+        $personas = Personas::find($id);
+        $personas -> delete();
+        return redirect()->route("personas.index")->with("succes","Eliminado con exito¡");
     }
 }
